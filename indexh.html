@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Personal Website Design | Codshel</title>
+
+    <!-- box-icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins' , 'sans-serif' ;
+
+}
+:root {
+    --bg-color : #1f242d;
+    --secound-bg-color : #343946 ;
+    --text-color : #fff ;
+    --main-color : #0ef ; 
+    --transform : .5s ease ;
+}
+html {
+    font-size: 62.5%;
+    overflow-x : hidden;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding : 10rem 9% 2rem;  
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgb(0, 0, 0, .2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    text-transform: capitalize;
+    transition: .3s ;
+}
+.navbar a:hover ,
+.navbar a.active{
+    color: var(--main-color);
+
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.home-img img {
+    width: 35vw;
+    border-radius: 50%;
+    margin-left: 8em;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight:700 ;
+    line-height: 1.3;
+}
+.home-content p {
+    font-size: 1.6rem;
+}
+.socail-media a {
+    display: inline-flex;
+    justify-content:center ;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 3rem;
+    color: var(--main-color) ;
+    margin: 3rem 1.5rem 3rem 0 ;
+    transition: var(--transform);
+}
+.socail-media a:hover {
+    background: var(--main-color);
+    color: var(--secound-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--secound-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600px;
+    transition: var(--transform);
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--secound-bg-color);
+
+}
+.about-img img{
+    width: 35vw;
+    border-radius: 50%;
+    margin-right: 10em;
+}
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+.about-content h3 {
+    font-size: 2.6rem;
+}
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+.services {
+    margin-bottom: 5rem;   
+}
+
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 6rem;
+}
+
+.services-container .services-box {
+    flex: 1 1 30rem;
+    background: var(--secound-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition:var(--transform);
+}
+
+.services-container .services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-container i {
+    font-size: 8rem;
+    color: var(--main-color);
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+.services-box p{
+    font-size: 1.6rem;
+    line-height: 3rem;
+    margin: 1rem 0 3rem ;
+    
+}
+
+.partfolio {
+    background-color: var(--secound-bg-color);
+    
+}
+.partfolio h2 {
+    margin-bottom: 4rem;
+}
+.prortfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.prortfolio-container .prortfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.prortfolio-box img{
+    width: 100%;
+    transition: var(--transform);
+}
+
+.prortfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.prortfolio-box .profolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(0, 0, 0, .1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: o 4rem;
+    transform: translateY(100%);
+    transition: var(--transform);
+}
+.prortfolio-box:hover .profolio-layer {
+    transform: translateY(0);
+    
+}
+.profolio-layer h4{
+    font-size: 4rem;
+
+}
+
+.profolio-layer {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+.profolio-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+.profolio-layer a i {
+    font-size: 2rem;
+    color: var(--secound-bg-color);
+}
+.contact h2 {
+    margin-bottom: 3rem;
+}
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box input ,
+.contact form textarea {
+     width: 100%;
+     padding: 1.5rem;
+     font-size: 1.6rem;
+     color: var(--text-color);
+     background: var(--secound-bg-color);
+     border-radius: .8rem;
+     margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+.contact form textarea {
+    resize: none;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--secound-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: var(--transform);
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--secound-bg-color);
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+    .services {
+        padding-bottom: 7rem;
+    }
+    .prortfolio {
+        padding-bottom: 7rem;
+    }
+    .contact {
+        min-height: auto;
+    }
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+@media (max-width: 760px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgb(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+        display: none;
+
+    }
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;    
+        margin: 3rem 0;
+    }
+    .home {
+        flex-direction: column;
+    }
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem ;
+    }
+    .prortfolio-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+} 
+@media (max-width: 617px) {
+    .prortfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+@media (max-width: 365px) {
+    .home-img{
+       width: 90vw;;
+    }
+    .about-img img {
+        width: 90vw;
+    }
+    .footer {
+        flex-direction: column-reverse;
+    }
+    .footer p {
+        align-items: center;
+        margin-top: 2rem;
+    }
+}
+</style>
+<body>
+    
+    <!-- header designe -->
+     <header class="header">
+
+        <a href="" class="logo">Profail</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">home</a>
+            <a href="#about" >about</a>
+            <a href="#services" >services</a>
+            <a href="#partfolio" >profolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+     </header>
+
+     <!-- home section design -->
+      <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Oussama Nyqech</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non consectetur aliquam optio explicabo, reprehenderit provident!</p>
+            <div class="socail-media">
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#"><i class='bx bxl-discord-alt'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+            </div>
+            <a href="#" class="btn">Download Cv</a>
+        </div>
+        <div class="home-img">
+            <img src="img/levi.jpg" alt="Hero" >
+        </div>
+      </section>
+
+      <!-- about section design -->
+
+       <section class="about" id="about">
+        <div class="about-img">
+            <img src="img/levi.jpg" alt="hero" >
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Frontend Develeper</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore blanditiis eveniet, 
+                quibusdam deleniti qui unde atque tempora est aut at iste esse odit reiciendis incidunt ullam harum 
+                culpa ipsa nobis placeat fuga nulla perspiciatis ex. Cupiditate dolorem velit ipsa accusantium mollitia
+                 atque modi saepe magni quis.</p>
+                 <a href="#" class="btn">read More </a>
+        </div>
+       </section>
+
+       <!-- services section design -->
+        <section class="services" id="services">
+            <h2 class="heading">Our <span>Services</span></h2>
+            <div class="all-services">
+                
+                <div class="services-container">
+
+                    <div class="services-box">
+                        <i class='bx bx-code-alt'></i>
+                        <h3>Web Devlopment</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Quidem repudiandae ipsa necessitatibus id cum,
+                             nemo obcaecati quae quod consectetur libero?</p>
+                             <a href="#" class="btn">Read More</a>
+                    </div>
+
+                    <div class="services-box">
+                        <i class='bx bxs-paint'></i>
+                        <h3>Web Devlopment</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Quidem repudiandae ipsa necessitatibus id cum,
+                             nemo obcaecati quae quod consectetur libero?</p>
+                             <a href="#" class="btn">Read More</a>
+                    </div>
+
+                    <div class="services-box">
+                        <i class='bx bx-bar-chart-alt'></i>
+                        <h3>Web Devlopment</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Quidem repudiandae ipsa necessitatibus id cum,
+                             nemo obcaecati quae quod consectetur libero?</p>
+                             <a href="#" class="btn">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- protfolio section design -->
+         <section class="partfolio" id="partfolio">
+            <H2 class="heading">Latest <span>Project</span></H2>
+
+            <div class="prortfolio-container">
+
+                <div class="prortfolio-box">
+                    <img src="img/free-c-plus-plus-projects-for-beginners.webp" alt="">
+                    <div class="profolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eaque.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="prortfolio-box">
+                    <img src="img/free-c-plus-plus-projects-for-beginners.webp" alt="">
+                    <div class="profolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eaque.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="prortfolio-box">
+                    <img src="img/free-c-plus-plus-projects-for-beginners.webp" alt="">
+                    <div class="profolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eaque.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="prortfolio-box">
+                    <img src="img/free-c-plus-plus-projects-for-beginners.webp" alt="">
+                    <div class="profolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eaque.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="prortfolio-box">
+                    <img src="img/free-c-plus-plus-projects-for-beginners.webp" alt="">
+                    <div class="profolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eaque.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="prortfolio-box">
+                    <img src="img/free-c-plus-plus-projects-for-beginners.webp" alt="">
+                    <div class="profolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eaque.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                
+            </div>
+         </section>
+
+         <!-- contact section design -->
+          <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me!</span></h2>
+
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" required placeholder="Full Name" name="" id="">
+                    <input type="email"  placeholder="Email address" name="" id="">
+                </div>
+                <div class="input-box">
+                    <input type="number"  placeholder="Mobile number" name="" id="">
+                    <input type="text"  placeholder="Email subject" name="" id="">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+          </section>
+
+          <!-- footer design -->
+
+          <footer class="footer">
+            <div class="footer-text">
+                <p>Copryright &copy; 2025 by Codehal  |  All Rights Reserved</p>
+            </div>
+            <div class="footer-iconTop">
+                <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+            </div>
+          </footer>
+
+          <!-- scroll reveal -->
+
+          <script src="https://unpkg.com/scrollreveal"></script>
+
+          <!-- typed js -->
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>   
+          <script>
+            // index.js - Final Optimized Version
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle Icon Navbar
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+    
+    if (menuIcon && navbar) {
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        });
+    }
+
+    // Scroll Sections Active Link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('header nav a');
+    const header = document.querySelector('header');
+
+    // Throttle scroll events for better performance
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            // Sticky Header
+            if (header) {
+                header.classList.toggle('sticky', window.scrollY > 100);
+            }
+
+            // Active Nav Link on Scroll
+            sections.forEach(sec => {
+                const top = window.scrollY;
+                const offset = sec.offsetTop - 150;
+                const height = sec.offsetHeight;
+                const id = sec.getAttribute('id');
+
+                if (top >= offset && top < offset + height) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        const targetLink = document.querySelector(`header nav a[href*="${id}"]`);
+                        if (targetLink) targetLink.classList.add('active');
+                    });
+                }
+            });
+        }, 100);
+    });
+
+    // Close navbar when clicking on links (event delegation)
+    document.querySelector('header nav')?.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            menuIcon?.classList.remove('bx-x');
+            navbar?.classList.remove('active');
+        }
+    });
+
+    // Scroll Reveal Animation
+    if (typeof ScrollReveal !== 'undefined') {
+        const scrollReveal = ScrollReveal({
+            reset: false,
+            distance: '80px',
+            duration: 2000,
+            delay: 200,
+            mobile: true
+        });
+
+        scrollReveal.reveal('.home-content, .heading', { origin: 'top' });
+        scrollReveal.reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+        scrollReveal.reveal('.home-content h1, .about-img', { origin: 'left' });
+        scrollReveal.reveal('.home-content p, .about-content', { origin: 'right' });
+    }
+
+    // Typed.js Initialization
+    if (typeof Typed !== 'undefined' && document.querySelector('.multiple-text')) {
+        new Typed('.multiple-text', {
+            strings: ['Frontend Developer'],
+            typeSpeed: 100,
+            backSpeed: 60,
+            backDelay: 1500,
+            loop: true
+        });
+    }
+});
+          </script>
+</body>
+</html>
